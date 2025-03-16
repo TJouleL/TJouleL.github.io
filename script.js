@@ -96,7 +96,7 @@ class LoadingScreen {
             url,
             type,
             loaded: false,
-            buffer_filled: false,
+            audio_ready: false,
             element: null,
             timeoutId: null
         };
@@ -109,7 +109,7 @@ class LoadingScreen {
             resource.element.addEventListener('progress', (event) => {
                 if (!event) {
                     console.error('Progress event is undefined');
-                    resource.buffer_filled = true;
+                    resource.audio_ready = true;
                     this.checkProgress();
                     return;
                 }
@@ -117,27 +117,24 @@ class LoadingScreen {
                 // get the current progress from the audio element directly
                 const audio = resource.element;
                 
-                if (audio.buffered.length > 0) {
+                if (audio.buffered.length > 0) { // audio will not be buffered yet when page is refreshed so we can't make it a requirement
                     const bufferedEnd = audio.buffered.end(audio.buffered.length - 1);
                     const duration = audio.duration || audio.seekable.end(0);
                     const percent = (bufferedEnd / duration) * 100;
                     
                     console.log(`Loaded ${Math.round(percent)}%`);
-                    
-                    if (percent >= 15.0) {
-                        resource.buffer_filled = true;
-                        this.checkProgress();
-                    }
                 }
+                resource.audio_ready = true;
+                this.checkProgress();
             });
             
             
             // set timeout for stuck resources
             resource.timeoutId = setTimeout(() => {
-                if (!resource.loaded && !resource.buffer_filled) {
+                if (!resource.loaded && !resource.audio_ready) {
                     console.warn(`Resource ${url} timed out, marking as complete`);
                     resource.loaded = true;
-                    resource.buffer_filled = true;
+                    resource.audio_ready = true;
                     this.checkProgress();
                 }
             }, 10000); // 10 second timeout
@@ -155,7 +152,7 @@ class LoadingScreen {
                 clearTimeout(resource.timeoutId);
                 console.error(`Failed to load ${url}:`, e);
                 resource.loaded = true;
-                resource.buffer_filled = true;
+                resource.audio_ready = true;
                 this.checkProgress();
             });
         }
@@ -165,7 +162,7 @@ class LoadingScreen {
 
     checkProgress() {
         const fullyLoaded = this.resources.every(r => 
-            r.loaded && r.buffer_filled
+            r.loaded && r.audio_ready
         );
         
         if (fullyLoaded) {
@@ -214,7 +211,7 @@ class Terminal {
         
         this.setupEventListeners();
         this.showPrompt();
-        this.print("TJoulesL [Version 1.0.0]\n(c) Some Corporation. All rights reserved.\n\n")
+        this.print("TJoulesL [Version 1.0.1]\n(c) Some Corporation. All rights reserved.\n\n")
     }
 
     setupEventListeners() {
@@ -284,6 +281,6 @@ term.addCommand('clear', (args) => {
     term.showPrompt();
 });
 term.addCommand('version', (args) => {
-    term.print("Terminal version 1.0.0, Made by TJouleL on github (https://www.github.com/TJouleL)\n")
+    term.print("Terminal version 1.0.1, Made by TJouleL on github (https://www.github.com/TJouleL)\n")
 });
 
