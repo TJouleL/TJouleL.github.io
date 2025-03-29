@@ -66,7 +66,6 @@ article:hover {
   box-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
 }
 
-/* post Title */
 article h2 a {
   color: #0f0;
   text-decoration: none;
@@ -74,7 +73,7 @@ article h2 a {
   font-weight: bold;
 }
 
-/* post Description */
+
 article p {
   color: #0f0;
   font-size: 16px;
@@ -103,7 +102,7 @@ article p {
   pointer-events: none;
 }
 
-/* terminal Button */
+
 .terminal-button {
   position: fixed;
   bottom: 20px;
