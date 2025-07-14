@@ -3,7 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search');
     const sortSelect = document.getElementById('sort');
 
-    fetch('index.json')
+    const currentPath = window.location.pathname;
+    let jsonPath = 'index.json';
+    if (currentPath.startsWith('/nl/')) {
+      jsonPath = '/nl/index.json';
+    } else if (currentPath.startsWith('/en/')) {
+      jsonPath = '/en/index.json';
+    }
+
+    fetch(jsonPath)
       .then(response => response.json())
       .then(posts => {
         function renderPosts(filteredPosts) {
@@ -11,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
           filteredPosts.forEach(post => {
             const article = document.createElement('article');
             article.innerHTML = `
-              <img src="${post.picture_url}" alt="${post.title}" class="post-image" href="${post.url}">
+              <a href="${post.url}"><img src="${post.picture_url}" alt="${post.title}" class="post-image"></a>
               <h2><a href="${post.url}">${post.title}</a></h2>
               <p>${post.description}</p>
               <p><em>${post.date}</em></p>

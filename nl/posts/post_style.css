@@ -1,0 +1,121 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    height: 100vh;
+    overflow-y: scroll; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    /* Custom scrollbar for WebKit browsers */
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #333;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #00ff00;
+        border-radius: 6px;
+        border: 3px solid #333;
+    }
+
+    /* Custom scrollbar for Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #00ff00 #333;
+}
+
+article {
+    background-color: rgb(60, 60, 60);
+    width: 80%;
+    max-width: 900px;
+    border: 1px solid #00ff00;
+    border-radius: 10px;
+    padding: 2%;
+    margin-top: 20px;
+    overflow-y: auto; 
+}
+
+
+
+
+article h1 {
+    text-align: center; 
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+article p {
+    text-align: left; 
+    margin: 0;
+    padding-left: 10px; 
+}
+
+article em {
+    display: block;
+    text-align: center; 
+    margin-bottom: 15px;
+}
+
+/* styling for the preformatted code block */
+pre {
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    margin-left: 10px; 
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+code {
+    font-size: 1rem;    
+}
+
+
+hr {
+    border-color: rgb(160, 160, 160); /* just the color, but hr tag is weird */
+}
+
+
+
+img {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;    
+    height: auto;
+}
+
+.blog-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: #0f0;
+    color: #000;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #0f0;
+    transition: all 0.3s ease;
+    z-index: 10; 
+}
+  
+.blog-button:hover {
+    box-shadow: 0 0 15px #0f0;
+}

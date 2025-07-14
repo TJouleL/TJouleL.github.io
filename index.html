@@ -1,42 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XR1PQZTR59"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XR1PQZTR59');
-  </script>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Securitycyber blog</title>
-  <meta name="description" content="Securitycyber.nl blog">
-  <meta name="keywords" content="Hacking, Cybersecurity, Coding">
-  <meta name="author" content="TJouleL">
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-  <link rel="manifest" href="icons/site.webmanifest">
+  <title>Redirecting...</title>
+  <script>
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith('nl')) {
+      window.location.href = '/nl/';
+    } else {
+      window.location.href = '/en/';
+    }
+  </script>
 </head>
 <body>
-  <canvas id="matrix-background"></canvas>
-  <header>
-    <h1>SecurityCyber Blog</h1>
-    <input type="text" id="search" placeholder="Search posts...">
-    <select id="sort">
-      <option value="date">Sort by Date</option>
-      <option value="name">Sort by Name</option>
-    </select>
-  </header>
-  <main id="blog-list" class="scrollable-list"></main>
-  
-  <!-- Terminal Button -->
-  <a href="/terminal" class="terminal-button">Terminal</a>
-  
-  <script src="script.js"></script>
+  <p>Redirecting...</p>
 </body>
 </html>

@@ -2,24 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- Homepage -->
     <url>
-        <loc>https://securitycyber.nl/</loc>
-        <lastmod>2025-03-29</lastmod>
+        <loc>https://securitycyber.nl/en/</loc>
+        <lastmod>2025-07-14</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://securitycyber.nl/nl/</loc>
+        <lastmod>2025-07-14</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
-    <url>
-        <loc>https://securitycyber.nl/terminal/</loc>
-        <lastmod>2025-03-29</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-
     
     <url>
-        <loc>https://securitycyber.nl/posts/securitycyber-blog-launch/</loc>
-        <lastmod>2025-03-29</lastmod>
+        <loc>https://securitycyber.nl/en/posts/securitycyber-blog-launch/</loc>
+        <lastmod>2025-07-14</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://securitycyber.nl/nl/posts/securitycyber-blog-lancering/</loc>
+        <lastmod>2025-07-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
@@ -27,7 +31,7 @@
 
     <url>
         <loc>https://securitycyber.nl/sitemap.xml</loc>
-        <lastmod>2025-03-29</lastmod>
+        <lastmod>2025-07-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

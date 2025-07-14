@@ -48,6 +48,24 @@ header h1 {
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr)); /* responsive grid */
   gap: 15px; 
+  /* Custom scrollbar for WebKit browsers */
+  &::-webkit-scrollbar {
+      width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+      background: #333;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      background-color: #00ff00;
+      border-radius: 6px;
+      border: 3px solid #333;
+  }
+
+  /* Custom scrollbar for Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: #00ff00 #333;
 }
 
 
